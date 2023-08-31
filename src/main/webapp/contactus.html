@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+.hero-container {
+  margin: auto;
+  display: flex;
+}
+
+.main-container {
+  width: 270px;
+  height: 540px;
+  position: relative;
+  margin: 0 20px;
+}
+
+.poster-container {
+  width: 230px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  z-index: 9999;
+}
+
+.poster {
+  width: 100%;
+  box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+}
+
+.ticket-container {
+  background: #fff;
+  width: 270px;
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  box-shadow: 0 5px 20px 3px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+}
+
+.main-container:hover .ticket-container {
+  opacity: 1;
+  animation: bounceIn 0.6s linear;
+}
+
+@keyframes bounceIn {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  20% {
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+  40% {
+    -webkit-transform: scale3d(0.9, 0.9, 0.9);
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.01, 1.01, 1.01);
+    transform: scale3d(1.01, 1.01, 1.01);
+  }
+  80% {
+    -webkit-transform: scale3d(0.97, 0.97, 0.97);
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+  }
+}
+
+/* @keyframes bounce {
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+} */
+
+.ticket__content {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.ticket__movie-title {
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.ticket__movie-slogan {
+  color: #999;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.ticket__current-price {
+  color: #69c982;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.ticket__old-price {
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 10px;
+}
+
+.ticket__buy-btn {
+  cursor: pointer;
+  width: 100%;
+  background: #2f2f2f;
+  color: white;
+  padding: 15px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:black;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: darkgrey;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: yellowgreen;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: yellowgreen;
+  color: white;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+
+.form-control-underlined {
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSE
+* ==========================================
+*
+*/
+
+body {
+  background: #ffd89b;
+  background: -webkit-linear-gradient(to right, #ffd89b, #19547b);
+  background: linear-gradient(to right, #ffd89b, #19547b);
+  min-height: 100vh;
+}
+.form-control::placeholder {
+  font-size: 0.95rem;
+  color: #aaa;
+  font-style: italic;
+}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+<style type=text/css>   
+body   
+{  
+  
+height: 125vh;  
+margin-top: 80px;  
+padding: 30px;  
+background-size: cover;  
+font-family: sans-serif;  
+}  
+header {  
+background-color: pink;  
+position: fixed;  
+left: 0;  
+right: 0;  
+top: 10px;  
+height: 50px;  
+display: flex;  
+align-items: center;  
+justify-content: space-between; 
+box-shadow: 0 0 25px 0 black;  
+}  
+header * {  
+display: inline;  
+}  
+header li {  
+margin: 20px;  
+}  
+header li a {  
+color: blue;  
+text-decoration: none;  
+}  
+</style> 
+
+</style>
+</head>
+<body>
+<header> 
+<h1>Book My Show!!</h1> 
+<nav>  
+<ul>  
+<li>  
+<a href="home1.html"> Home </a>  
+</li>  
+
+ <li>
+<a href="cart.html"> Telugu </a>  
+</li>  
+<li>  
+<a href="technology.html"> Hindi </a> 
+</li>
+<li>  
+<a href="contactus.html"> English </a> 
+</li>
+<li> <a href="login.xhtml"> Sign Out </a>  
+</li>  
+<li>  
+
+</ul>  
+</nav>  
+</header>
+<br/><br/>
+ <script>
+      $(function() {
+         $("#includeHtml").load("nav.html");
+      });
+   </script>
+<form action="#" method="post" class="search-box">
+                  <input type="search" placeholder="Search your Keyword" name="search"
+                    required="required" autofocus="">
+                  <button type="submit" class="btn"><span class="fa fa-search"
+                      aria-hidden="true"></span></button>
+                </form>
+<br/><br/>
+<div class="row">
+<div class="column">
+  <div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP.0a2zIAUnINxdadW3uasFtwAAAA&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Blade Runner 2049</h4>
+          <p class="ticket__movie-slogan">
+            More human than human is our motto.
+          </p>
+          <p class="ticket__current-price">$28.00</p>
+          <p class="ticket__old-price">$44.99</p>
+          <form action="seats_booking.html">
+          <button class="ticket__buy-btn">Buy now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse3.mm.bing.net/th?id=OIP.GaJnr8iPd-jBfVaG1nSYNwHaLK&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">THE KING</h4>
+          <p class="ticket__movie-slogan">King of king's</p>
+          <p class="ticket__current-price">$10.75</p>
+          <p class="ticket__old-price">$30.99</p>
+          <form action="seats_booking.html">
+          <button class="ticket__buy-btn">Buy now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse2.mm.bing.net/th?id=OIP.LuZju7PBKGv6BMKvHCnuRgHaLH&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">KIDS</h4>
+          <p class="ticket__movie-slogan">
+           Especially For Kids
+          </p>
+          <p class="ticket__current-price">$8.00</p>
+          <p class="ticket__old-price">$20.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+<div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP.1qLAmDzwoO_685HhBs9wngHaLH&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Justice League</h4>
+          <p class="ticket__movie-slogan">You can't save the world alone.</p>
+          <p class="ticket__current-price">$20.75</p>
+          <p class="ticket__old-price">$40.99</p>
+          <form action="seats_booking.html">
+          <button class="ticket__buy-btn">Buy now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+      <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP.-_dgZteWTricjSx36T7isgHaLh&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Blade Runner 2049</h4>
+          <p class="ticket__movie-slogan">
+            More human than human is our motto.
+          </p>
+          <p class="ticket__current-price">$28.00</p>
+          <p class="ticket__old-price">$44.99</p>
+          <form action="seats_booking.html">
+          <button class="ticket__buy-btn">Buy now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP.0OfMzcen8-SXgK487h_YeAHaKY&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Justice League</h4>
+          <p class="ticket__movie-slogan">You can't save the world alone.</p>
+          <p class="ticket__current-price">$20.75</p>
+          <p class="ticket__old-price">$40.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse1.mm.bing.net/th?id=OIP.ybWwuFpRKgQSaMg72sB8_AHaLH&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Blade Runner 2049</h4>
+          <p class="ticket__movie-slogan">
+            More human than human is our motto.
+          </p>
+          <p class="ticket__current-price">$28.00</p>
+          <p class="ticket__old-price">$44.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+<div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse3.mm.bing.net/th?id=OIP.sNIVyzJzCEe3CiQeE3KbewAAAA&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Justice League</h4>
+          <p class="ticket__movie-slogan">You can't save the world alone.</p>
+          <p class="ticket__current-price">$20.75</p>
+          <p class="ticket__old-price">$40.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse2.mm.bing.net/th?id=OIP.6OFRvVzCWqK3CYVxkhoP2QHaIb&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Blade Runner 2049</h4>
+          <p class="ticket__movie-slogan">
+            More human than human is our motto.
+          </p>
+          <p class="ticket__current-price">$28.00</p>
+          <p class="ticket__old-price">$44.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse3.mm.bing.net/th?id=OIP.hRIIplaSEbdniGXIDQabWAAAAA&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Justice League</h4>
+          <p class="ticket__movie-slogan">You can't save the world alone.</p>
+          <p class="ticket__current-price">$20.75</p>
+          <p class="ticket__old-price">$40.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="column">
+<div class="hero-container">
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://assetscdn1.paytm.com/images/cinema/Pushpa_The%20Rule-min-1308e350-bcdc-11ed-b997-599ab319a6d0.jpg" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Blade Runner 2049</h4>
+          <p class="ticket__movie-slogan">
+            More human than human is our motto.
+          </p>
+          <p class="ticket__current-price">$28.00</p>
+          <p class="ticket__old-price">$44.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-container">
+      <div class="poster-container">
+        <a href="#"><img src="https://tse4.mm.bing.net/th?id=OIP.lzBXM86jTKHp_uewz7itSgHaLH&pid=Api&P=0&h=180" class="poster" /></a>
+      </div>
+      <div class="ticket-container">
+        <div class="ticket__content">
+          <h4 class="ticket__movie-title">Justice League</h4>
+          <p class="ticket__movie-slogan">You can't save the world alone.</p>
+          <p class="ticket__current-price">$20.75</p>
+          <p class="ticket__old-price">$40.99</p>
+          <button class="ticket__buy-btn">Buy now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div id="includeHtml"></div>
+</body>
+</html>

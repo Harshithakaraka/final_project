@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* Additional styles for Contact Us page */
+
+.contact-bg {
+    min-height: 100vh; /* Set a minimum height to fill the viewport */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.contact-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Set transparency for the contact box */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    width: 100%;
+}
+
+.contact-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-box label {
+    margin-bottom: 6px;
+}
+
+.contact-box input,
+.contact-box textarea {
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.contact-box button {
+    background-color: #555;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-box button:hover {
+    background-color: #333;
+}

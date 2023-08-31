@@ -1,0 +1,62 @@
+@charset "UTF-8";
+/* ... previous styles ... */
+
+/* Projects section styles */
+.projects {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.projects h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.project {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #f7f7f7;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.project h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Tasks section styles */
+.tasks {
+  background-color: #f7f7f7;
+  padding: 50px 0;
+}
+
+.tasks h2 {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+.task {
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.task p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* ... remaining styles ... */
